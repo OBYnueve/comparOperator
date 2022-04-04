@@ -7,7 +7,7 @@ class TourOperator
     private string $link;
     private int $gradeCount;
     private int $gradeTotal;
-    private bool $isPremium;
+    private int $isPremium;
 
     function __construct(array $data)
     {
@@ -38,7 +38,7 @@ class TourOperator
     {
         return $this->gradeTotal;
     }
-    function getIsPremium() : bool
+    function getIsPremium() : int
     {
         return $this->isPremium;
     }
