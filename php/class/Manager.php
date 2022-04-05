@@ -9,12 +9,15 @@ class Manager
         require "./utils/ConnectDataBase.php";
         $this->bdd = $connect;
     }
-    public function getAllDestination() : void{
-        $allDestination = $this->bdd->query("SELECT * FROM destination");
-        $allDestination->execute();
-        while($destination = $allDestination->fetch()){
-            var_dump($destination);
+    public function getAllDestination() : array{
+        $argumentDestination = $this->bdd->query("SELECT * FROM destination");
+        $argumentDestination->execute();
+        $resultDestination = $argumentDestination->fetchAll(PDO::FETCH_ASSOC);
+        $tableauDestination = array();
+        for($i = 0; $i < count($resultDestination); $i++){
+            array_push($tableauDestination, new Destination($resultDestination[$i]));
         }
+        return $tableauDestination;
     }
     public function getOperatorByDestination($destination) : void{
         $OpByDestination = $this->bdd->prepare("SELECT tour_operator_id FROM destination WHERE destination.id = ?");
@@ -30,12 +33,15 @@ class Manager
         $ReviewByOp->execute(array($operatorID));
         var_dump($ReviewByOp->fetch());
     }
-    public function getAllOperator() : void{
-        $allOperator = $this->bdd->query("SELECT * FROM tour_operator");
-        $allOperator->execute();
-        while($operator = $allOperator->fetch()){
-            var_dump($operator);
+    public function getAllOperator() : array{
+        $argumentOperator = $this->bdd->query("SELECT * FROM tour_operator");
+        $argumentOperator->execute();
+        $resultOperator = $argumentOperator->fetchAll(PDO::FETCH_ASSOC);
+        $tableauOperator = array();
+        for($i = 0; $i < count($resultOperator); $i++){
+            array_push($tableauOperator, new TourOperator($resultOperator[$i]));
         }
+        return $tableauOperator;
     }
     public function updateOperatorToPremium($operatorID) : void{
         $updateOperator = $this->bdd->prepare("UPDATE tour_operator SET is_premium = 1 WHERE id = ?");
