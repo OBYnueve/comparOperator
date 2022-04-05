@@ -1,3 +1,12 @@
+<?php
+require "./utils/ConnectDataBase.php";
+require "./utils/AutoLoad.php";
+Autoloader::register();
+require_once "./utils/InternetProtocol.php";
+
+$manager = new Manager();
+
+?>
 <!DOCTYPE html>
 
 <html lang="fr">

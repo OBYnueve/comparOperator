@@ -7,7 +7,7 @@ class Destination
     private int $price;
     private int $tourOperatorId;
 
-    function __construct($data)
+    function __construct(array $data)
     {
         $this->id = $data["id"];
         $this->location = $data["location"];
