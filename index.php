@@ -6,6 +6,13 @@ require_once "./utils/InternetProtocol.php";
 
 $manager = new Manager();
 
+
+$arguments = $connect->query("SELECT * FROM destination");
+$arguments->execute();
+$result = $arguments->fetchAll(PDO::FETCH_ASSOC);
+var_dump($result);
+$destination = new Destination($result);
+
 ?>
 <!DOCTYPE html>
 
@@ -109,6 +116,23 @@ $manager = new Manager();
     </div>
     <div class="container">
         <div class="row wrap p-5 justify-content-between "style = "width: 100%;">
+
+<?php foreach($arguments as $argument){ ?>
+
+    <div class="card p-3 m-3" style="width: 18rem;">
+                <img src="./img/khao-sok-parc-thailande.1533479.jpeg" class="card-img-top" alt="thailande">
+                <div class="card-body">
+                <div class="overlay">
+                        <span class="id"><? $argument["id"]; ?></span>
+                        <span class="prix"><? $argument["price"]; ?></span>
+                        <span class="nom"><? $argument["location"]; ?></span>
+                    </div>
+                    <p class="card-text"></p>
+                    <button type="button" class="btn btn-dark"><? $argument["tour_operator_id"]; ?></button>
+                </div>
+            </div>
+
+<?php } ?>
             <!-- Thailande -->
             <div class="card p-3 m-3" style="width: 18rem;">
                 <img src="./img/khao-sok-parc-thailande.1533479.jpeg" class="card-img-top" alt="thailande">
@@ -212,10 +236,10 @@ $manager = new Manager();
     <div class="footer-basic">
         <footer>
             <div class="social">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-snapchat"></i></a>
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-snapchat"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-facebook"></i></a>
             </div>
             <ul class="list-inline">
                 <li class="list-inline-item"><a href="#">Home</a></li>
