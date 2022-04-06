@@ -18,17 +18,8 @@ $tableauDestination = $manager->getAllDestination();
 </head>
 
 <body>
-    <header>
-        <nav class="navbar  fw-bold   navbar-light bg-purple">
-            <div class="container-fluid">
-                <a class="navbar-brand text-light" href="http://comparoperator.test/">ComparOperator</a>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-        </nav>
-    </header>
+   
+<?php require "./inc/header.php" ?>
 
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="width: 100%;">
         <div class="carousel-inner">
@@ -103,24 +94,8 @@ $tableauDestination = $manager->getAllDestination();
 
             <?php } ?>
 
-            <div class="footer-basic">
-                <footer>
-                    <div class="social">
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-snapchat"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                    </div>
-                    <ul class="list-inline">
-                        <li class="list-inline-item"><a href="#">Home</a></li>
-                        <li class="list-inline-item"><a href="#">Services</a></li>
-                        <li class="list-inline-item"><a href="#">About</a></li>
-                        <li class="list-inline-item"><a href="#">Terms</a></li>
-                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
-                    </ul>
-                    <p class="copyright">Company ComparOperator © 2022</p>
-                </footer>
-            </div>
+            <?php require "./inc/footer.php" ?>
+            
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
