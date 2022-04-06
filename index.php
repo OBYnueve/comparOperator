@@ -19,10 +19,9 @@ $tableauDestination = $manager->getAllDestination();
 
 <body>
     <header>
-        <nav class="navbar navbar-light bg-purple">
+        <nav class="navbar  fw-bold   navbar-light bg-purple">
             <div class="container-fluid">
-                <a class="navbar-brand" href="http://comparoperator.test/">ComparOperator</a>
-                <a class="navbar-brand fa fa-plane" href="...">Vols</a>
+                <a class="navbar-brand text-light" href="http://comparoperator.test/">ComparOperator</a>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
@@ -40,7 +39,7 @@ $tableauDestination = $manager->getAllDestination();
                 <img src="img/Italie-paysage-©-iStock-1093694146.jpg" class="d-block w-100" alt="Italie">
             </div>
             <div class="carousel-item" style="width:100%; height:auto;">
-                <img src="img/moraine-lake.1473669.c375x224.jpg" class="d-block w-100" alt="canada">
+                <img src="img/(Image)-image-Japon-Fujiyoshida-Pagode-de-Chureito-et-mont-Fuji-au-printemps-as_284756420.jpg" class="d-block w-100" alt="canada">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -64,33 +63,13 @@ $tableauDestination = $manager->getAllDestination();
 
         <div class="form-group">
             <label for="depart">Date de départ</label>
-            <input type="date" name="depart" id="depart" value="13/04/2020">
+            <input type="date" name="depart" id="depart" value="2020/04/13">
 
             <label for="retour">Date de Retour</label>
-            <input type="date" name="retour" id="retour" value="14/04/2020">
+            <input type="date" name="retour" id="retour" value="2020/04/13">
         </div>
 
         <div class="form-group">
-            <label for="adultes">Nombre d'adultes</label>
-            <select name="adultes" id="adultes">
-                <option selected="selected">0 Adulte</option>
-                <option>1 Adulte</option>
-                <option>2 Adultes</option>
-                <option>3 Adultes</option>
-                <option>4 Adultes</option>
-                <option>5 Adultes</option>
-            </select>
-
-            <label for="enfants">Nombre d'enfants</label>
-            <select name="enfants" id="enfants">
-                <option selected="selected">0 Enfant</option>
-                <option>1 Enfant</option>
-                <option>2 Enfants</option>
-                <option>3 Enfants</option>
-                <option>4 Enfants</option>
-                <option>5 Enfants</option>
-            </select>
-
             <label for="type">Categorie</label>
             <select name="type" id="type">
                 <option selected="selected">Classe Economique</option>
@@ -113,12 +92,12 @@ $tableauDestination = $manager->getAllDestination();
                     <img src="./img/khao-sok-parc-thailande.1533479.jpeg" class="card-img-top" alt="thailande">
                     <div class="card-body">
                         <div class="overlay">
-                            <span class="id"><?= $tableauDestination[$i]->getId(); ?></span>
-                            <span class="prix"><?= $tableauDestination[$i]->getPrice(); ?></span>
-                            <span class="nom"><?= $tableauDestination[$i]->getLocation(); ?></span>
+                            <span class="id">Id : <?= $tableauDestination[$i]->getId(); ?><br></span>
+                            <span class="prix">Prix : <?= $tableauDestination[$i]->getPrice(); ?>€<br></span>
+                            <span class="nom">Destination : <?= $tableauDestination[$i]->getLocation(); ?><br></span>
                         </div>
                         <p class="card-text"></p>
-                        <button type="button" class="btn btn-dark"><? $argument["tour_operator_id"]; ?></button>
+                        <button type="button" class="btn btn-dark">Comparateur<? $argument["tour_operator_id"]; ?></button>
                     </div>
                 </div>
 
